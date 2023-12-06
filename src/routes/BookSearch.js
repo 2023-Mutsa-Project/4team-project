@@ -173,7 +173,7 @@ function BookSearch() {
         <div className={styles.addButtonContainer}>
           <button
             className={styles.addButton}
-            onClick={() => history.push("/review/:id")}
+            onClick={() => history.push("/review/post")}
           >
             도서 추가하기
           </button>

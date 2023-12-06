@@ -3,6 +3,7 @@ import BookForum from './routes/BookForum';
 import BookForumForm from './routes/BookForumForm';
 import BookSearch from './routes/BookSearch';
 import BookReview from './routes/BookReview';
+import BookReviewForm from './routes/BookReviewForm';
 import Login from './routes/Login';
 import RegisterForm from './routes/RegisterForm';
 import Profile from './routes/Profile';
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/review/post">
+          <BookReviewForm />
         </Route>
         <Route path="/review">
           <BookSearch />
