@@ -19,7 +19,7 @@
   height: 510px;
   left: 0;
   position: absolute;
-  top: 3561px;
+  top: 3560px;
   width: 1920px;
 }
 
@@ -1080,7 +1080,7 @@
   width: 493px;
 }
 
-.index .overlap-3 {
+.index .overlap-3-0 {
   height: 31px;
   left: 260px;
   position: absolute;
@@ -1197,7 +1197,7 @@
   width: 424px;
 }
 
-.index .button {
+.index .button-0 {
   all: unset;
   align-items: center;
   border-radius: 10px;
@@ -1210,7 +1210,7 @@
   width: 434px;
 }
 
-.index .button-2 {
+.index .button-2-0 {
   all: unset;
   align-items: center;
   background-color: #ffca41;
@@ -1278,7 +1278,7 @@
 .index .text-wrapper-43 {
   color: #ffffff;
   font-family: "Inter", Helvetica;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.18px;
   line-height: 32.4px;
@@ -1455,7 +1455,7 @@
   width: 330px;
 }
 
-.index .background {
+/* .index .background {
   background-color: #f9fbff;
   border: 4px solid;
   border-color: #dbe1e9;
@@ -1465,7 +1465,8 @@
   position: absolute;
   top: 0;
   width: 300px;
-}
+} 
+Index0 파일에 이 class 없는 듯..? */
 
 .index .image {
   height: 396px;
@@ -1781,14 +1782,14 @@
 
 .index .mbti {
   color: #ffffff;
-  font-family: "Inter", Helvetica;
+  font-family: "Noto Sans KR", Helvetica;
   font-size: 36px;
   font-weight: 600;
   left: 972px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 601px;
+  top: 580px;
   width: 327px;
 }
 
@@ -1963,10 +1964,10 @@
   align-items: center;
   background-color: #ffca41;
   box-sizing: border-box;
-  display: inline-flex;
+  display: flex;
   flex: 0 0 auto;
   gap: 10px;
   justify-content: center;
-  padding: 13px 33px;
+  padding: 13px 20px;
   position: relative;
 }

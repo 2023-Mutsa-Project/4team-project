@@ -1,14 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
-export const Index = () => {
-  const handleReadingActivityClick = () => {
-    window.location.href = '../../../../activity-page/index.html';
+export const Index0 = () => {
+  const navigate = useNavigate();
+
+  const handleActivityPageClick = () => {
+    navigate("/activity");
+  };
+  const handleEventPageClick = () => {
+    navigate("/event");
   };
 
   return (
     <div className="index">
       <div className="div">
+        {/* FOOTER */}
         <footer className="footer">
           <div className="content">
             <div className="footer-content">
@@ -133,7 +140,9 @@ export const Index = () => {
                   <div className="content-3">
                     <div className="address">
                       <div className="text-wrapper-8">Address :</div>
-                      <p className="p">24A Kingston St, Los Vegas NC 28202, USA.</p>
+                      <p className="p">
+                        24A Kingston St, Los Vegas NC 28202, USA.
+                      </p>
                     </div>
                     <div className="mail">
                       <div className="text-wrapper-9">Mail :</div>
@@ -167,6 +176,8 @@ export const Index = () => {
             </div>
           </div>
         </footer>
+
+        {/* EVENT */}
         <div className="event">
           <div className="element-2">
             <div className="overlap-group-wrapper">
@@ -181,9 +192,12 @@ export const Index = () => {
                   <div className="text-wrapper-15">Read more</div>
                 </button>
                 <p className="text-wrapper-16">
-                  The point of using Lorem Ipsum hiter of that using making it look like others readable will get end.
+                  The point of using Lorem Ipsum hiter of that using making it
+                  look like others readable will get end.
                 </p>
-                <p className="text-wrapper-17">Significant reading has more info number</p>
+                <p className="text-wrapper-17">
+                  Significant reading has more info number
+                </p>
                 <div className="overlap" />
               </div>
             </div>
@@ -199,9 +213,13 @@ export const Index = () => {
                   <div className="text-wrapper-15">Read more</div>
                 </button>
                 <p className="text-wrapper-19">
-                  The point of using Lorem Ipsum hiter of that using making it look like others readable will get end.
+                  The point of using Lorem Ipsum hiter of that using making it
+                  look like others readable will get end.
                 </p>
-                <p className="release-of-letraset">Release of Letraset sheets tools containing&nbsp;&nbsp;passages</p>
+                <p className="release-of-letraset">
+                  Release of Letraset sheets tools
+                  containing&nbsp;&nbsp;passages
+                </p>
                 <div className="overlap-group-3" />
               </div>
             </div>
@@ -217,15 +235,20 @@ export const Index = () => {
                   <div className="text-wrapper-15">Read more</div>
                 </button>
                 <p className="text-wrapper-21">
-                  The point of using Lorem Ipsum hiter of that using making it look like others readable will get end.
+                  The point of using Lorem Ipsum hiter of that using making it
+                  look like others readable will get end.
                 </p>
-                <p className="text-wrapper-17">The energy efficiency offers hydrotherapy or swim</p>
+                <p className="text-wrapper-17">
+                  The energy efficiency offers hydrotherapy or swim
+                </p>
                 <div className="overlap-group-4" />
               </div>
             </div>
           </div>
           <div className="text-wrapper-22">이벤트 리스트</div>
         </div>
+
+        {/* DEBATE */}
         <div className="debate">
           <div className="frame">
             <div className="the-chapter">
@@ -245,8 +268,9 @@ export const Index = () => {
                           <div className="bg-2" />
                         </div>
                         <p className="text-wrapper-27">
-                          Making this the first true value generator on the Internet. It of over 200 Latin words,
-                          combined with a handful.
+                          Making this the first true value generator on the
+                          Internet. It of over 200 Latin words, combined with a
+                          handful.
                         </p>
                         <div className="text-wrapper-28">토론방1 주제</div>
                       </div>
@@ -264,8 +288,9 @@ export const Index = () => {
                           <div className="bg-4" />
                         </div>
                         <p className="text-wrapper-33">
-                          Making this the first true value generator on the Internet. It of over 200 Latin words,
-                          combined with a handful.
+                          Making this the first true value generator on the
+                          Internet. It of over 200 Latin words, combined with a
+                          handful.
                         </p>
                         <div className="text-wrapper-34">토론방2 주제</div>
                       </div>
@@ -273,7 +298,7 @@ export const Index = () => {
                     <div className="element-6">
                       <div className="overlap-2">
                         <div className="details-3">
-                          <div className="overlap-3">
+                          <div className="overlap-3-0">
                             <div className="text-wrapper-35">반박형</div>
                             <div className="text-wrapper-36">토론유형 :</div>
                           </div>
@@ -285,16 +310,17 @@ export const Index = () => {
                           <div className="bg-6" />
                         </div>
                         <p className="text-wrapper-39">
-                          Making this the first true value generator on the Internet. It of over 200 Latin words,
-                          combined with a handful.
+                          Making this the first true value generator on the
+                          Internet. It of over 200 Latin words, combined with a
+                          handful.
                         </p>
                         <div className="text-wrapper-40">토론방3 주제</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button className="button">
-                  <button className="button-2">
+                <button className="button-0">
+                  <button className="button-2-0">
                     <div className="text-wrapper-41">토론방 생성하기</div>
                   </button>
                 </button>
@@ -303,14 +329,19 @@ export const Index = () => {
           </div>
           <div className="text-wrapper-42">독서 토론방</div>
         </div>
+
+        {/* REVIEWS */}
         <div className="reviews">
           <div className="quotes">
             <p className="text-wrapper-43">
-              “Crowdsource term sheet freemium beta stealth responsive web design niche market rock star channels.”
+              “Crowdsource term sheet freemium beta stealth responsive web
+              design niche market rock star channels.”
             </p>
           </div>
           <div className="text-wrapper-44">인기 리뷰</div>
         </div>
+
+        {/* POPULAR */}
         <div className="popular">
           <div className="element-7">
             <div className="element-8">
@@ -326,7 +357,8 @@ export const Index = () => {
                   </div>
                   <div className="content-6">
                     <p className="many-variations-of">
-                      Many variations of passages of Lorem Ipsum willing araise&nbsp;&nbsp;alteration in some form.
+                      Many variations of passages of Lorem Ipsum willing
+                      araise&nbsp;&nbsp;alteration in some form.
                     </p>
                     <div className="details-4">
                       <div className="text-wrapper-46">4.5/ 5</div>
@@ -337,40 +369,11 @@ export const Index = () => {
               </div>
             </div>
             <div className="element-9">
-              <div className="book-3">
-                <div className="overlap-group-8">
-                  <div className="background" />
-                  <img
-                    className="image"
-                    alt="Image"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/image@2x.png"
-                  />
-                  <div className="text-wrapper-47">
-                    **********************&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**********************
-                  </div>
-                  <div className="pattern" />
-                  <p className="text-wrapper-48">A supreme packages and web page editors.</p>
-                  <div className="text-wrapper-49">JOHN ABRAHAM</div>
-                  <p className="text-wrapper-50">
-                    A long established fact that a reader normal as well distribution of letters
-                  </p>
-                  <img
-                    className="trees"
-                    alt="Trees"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/trees.svg"
-                  />
-                  <img
-                    className="name"
-                    alt="Name"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/name.svg"
-                  />
-                  <img
-                    className="audio"
-                    alt="Audio"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/audio.png"
-                  />
-                </div>
-              </div>
+              <img
+                className="book-3"
+                alt="Book"
+                src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/book.jpg"
+              />
               <div className="content-wrapper">
                 <div className="content-5">
                   <div className="title">
@@ -378,7 +381,8 @@ export const Index = () => {
                   </div>
                   <div className="content-6">
                     <p className="many-variations-of">
-                      Many variations of passages of Lorem Ipsum willing araise&nbsp;&nbsp;alteration in some form.
+                      Many variations of passages of Lorem Ipsum willing
+                      araise&nbsp;&nbsp;alteration in some form.
                     </p>
                     <div className="details-5">
                       <div className="text-wrapper-46">4.7/5</div>
@@ -389,40 +393,11 @@ export const Index = () => {
               </div>
             </div>
             <div className="element-9">
-              <div className="book-2">
-                <div className="overlap-group-9">
-                  <div className="background-2" />
-                  <img
-                    className="image-2"
-                    alt="Image"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/image-1@2x.png"
-                  />
-                  <div className="text-wrapper-51">
-                    **********************&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**********************
-                  </div>
-                  <div className="bg-8" />
-                  <p className="text-wrapper-52">A supreme packages and web page editors.</p>
-                  <div className="text-wrapper-53">JOHN ABRAHAM</div>
-                  <p className="text-wrapper-54">
-                    A long established fact that a reader normal as well distribution of letters
-                  </p>
-                  <img
-                    className="mockup"
-                    alt="Mockup"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/mockup1-1.png"
-                  />
-                  <img
-                    className="trees-2"
-                    alt="Trees"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/trees-1.svg"
-                  />
-                  <img
-                    className="name-2"
-                    alt="Name"
-                    src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/name-1.svg"
-                  />
-                </div>
-              </div>
+              <img
+                className="book-2"
+                alt="Book"
+                src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/book.jpg"
+              />
               <div className="content-wrapper">
                 <div className="content-5">
                   <div className="title">
@@ -430,7 +405,8 @@ export const Index = () => {
                   </div>
                   <div className="content-6">
                     <p className="many-variations-of">
-                      Many variations of passages of Lorem Ipsum willing araise&nbsp;&nbsp;alteration in some form.
+                      Many variations of passages of Lorem Ipsum willing
+                      araise&nbsp;&nbsp;alteration in some form.
                     </p>
                     <div className="details-5">
                       <div className="text-wrapper-46">4.3/5</div>
@@ -452,7 +428,11 @@ export const Index = () => {
             src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/arrow-2.svg"
           />
         </div>
+
+        {/* POPULAR-TITLE */}
         <div className="text-wrapper-55">인기 있는 도서</div>
+
+        {/* MAIN BANNER */}
         <div className="main-banner">
           <div className="overlap-4">
             <div className="rectangle" />
@@ -466,10 +446,12 @@ export const Index = () => {
             <p className="mbti">
               나의 독서 타입은?
               <br />
-              독서 mbti 테스트 -&gt;
+              독서 mbti 테스트
             </p>
           </div>
         </div>
+
+        {/* HEADER */}
         <header className="header">
           <div className="overlap-5">
             <div className="logo-wrapper">
@@ -487,14 +469,21 @@ export const Index = () => {
                 <div className="text-wrapper-57">Home</div>
                 <div className="text-wrapper-57">도서 공유</div>
                 <div className="view">
-                  <div className="text-wrapper-58" onClick={handleReadingActivityClick}>독서 활동</div>
+                  <div
+                    className="text-wrapper-58"
+                    onClick={handleActivityPageClick}
+                  >
+                    독서 활동
+                  </div>
                   <img
                     className="chevron-down"
                     alt="Chevron down"
                     src="https://cdn.animaapp.com/projects/655f025f7b7a4a525e0b5c7d/releases/655f029a8042abc4409056b2/img/chevron-down.svg"
                   />
                 </div>
-                <div className="text-wrapper-57">이벤트 및 클럽</div>
+                <div className="text-wrapper-57" onClick={handleEventPageClick}>
+                  이벤트 및 클럽
+                </div>
                 <div className="text-wrapper-57">독서 토론</div>
                 <div className="cart">
                   <div className="overlap-6">
@@ -521,3 +510,5 @@ export const Index = () => {
     </div>
   );
 };
+
+// export default Index0;

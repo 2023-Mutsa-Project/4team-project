@@ -1,1 +1,1 @@
-export { Index } from "./Index.jsx";
+export { Index0 } from "../Index/Index0.jsx";
