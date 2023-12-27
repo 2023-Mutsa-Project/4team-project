@@ -32,8 +32,15 @@
 // };
 
 //chatGPT 코드
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from 'react'; 
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { authUser } from './store/thunkFunctions';
+//import ProtectedRoutes from './authroutes/ProtectedRoutes';
+//import NotAuthRoutes from './authroutes/NotAuthRoutes';
 
 import { Index0 } from "./screens/Index/Index0.jsx";
 import { Index1 } from "./ActivityPage/screens/Index/Index1.jsx";
@@ -48,10 +55,29 @@ import { Index9 } from "./QuizQuestionPage/screens/Index/Index9.jsx";
 import { Index10 } from "./QuizResultPage/screens/Index/Index10.jsx";
 
 function App() {
+
+  const dispatch = useDispatch();
+  const isAuth = useSelector(state => state.user?.isAuth);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (isAuth) { //인증했을 경우에만 올바른 토큰인지 확인 요청
+      dispatch(authUser());
+    }
+  }, {isAuth, pathname, dispatch})
+
   return (
-    //<BrowserRouter>
-      <Router>
-        <Routes>
+    <div className="App">
+
+      <ToastContainer 
+        position='bottom-right'
+        theme='light'
+        pauseOnHover
+        autoClose={1500}
+      />
+
+      <Routes>
+
           <Route path="/" element={<Index0 />} />
           <Route path="/activity" element={<Index1 />} />
           <Route path="/typetest" element={<Index2 />} />
@@ -63,9 +89,22 @@ function App() {
           <Route path="/typetest-test" element={<Index8 />} />
           <Route path="/quiz-questions" element={<Index9 />} />
           <Route path="/quiz-result" element={<Index10 />} />
-        </Routes>
-      </Router>
-    //</BrowserRouter>
+
+{/* 이 Route들의 경우, 로그인 된 사람들만 접근 가능 (아래는 예시)
+        <Route element={<ProtectedRoutes isAuth={isAuth}/>}>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/discussion" element={<Discussion/>}/>
+        </Route>
+
+이 Route들의 경우, 로그인 안된 사람들만 접근 가능 (아래는 예시)
+        <Route element={<NotAuthRoutes isAuth={isAuth}/>}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Sign />} />
+        </Route> */}
+
+      </Routes>
+    
+    </div>
   );
 }
 
