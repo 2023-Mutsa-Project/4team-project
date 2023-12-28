@@ -1,4 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from 'react'; 
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { authUser } from './store/thunkFunctions';
+//import ProtectedRoutes from './authroutes/ProtectedRoutes';
+//import NotAuthRoutes from './authroutes/NotAuthRoutes';
+
 import BookForum from "./routes/BookForum";
 import BookForumDetail from "./routes/BookForumDetail";
 import BookForumForm from "./routes/BookForumForm";
@@ -23,6 +32,56 @@ import { Index9 } from "./QuizQuestionPage/screens/Index/Index9.jsx";
 import { Index10 } from "./QuizResultPage/screens/Index/Index10.jsx";
 
 function App() {
+  /*const dispatch = useDispatch();
+  const isAuth = useSelector(state => state.user?.isAuth);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (isAuth) { //인증했을 경우에만 올바른 토큰인지 확인 요청
+      dispatch(authUser());
+    }
+  }, {isAuth, pathname, dispatch})
+
+  return (
+    <div className="App">
+
+      <ToastContainer 
+        position='bottom-right'
+        theme='light'
+        pauseOnHover
+        autoClose={1500}
+      />
+
+      <Routes>
+
+          <Route path="/" element={<Index0 />} />
+          <Route path="/activity" element={<Index1 />} />
+          <Route path="/typetest" element={<Index2 />} />
+          <Route path="/quiz" element={<Index3 />} />
+          <Route path="/typetest-result" element={<Index4 />} />
+          <Route path="/typetest-result-2" element={<Index5 />} />
+          <Route path="/event" element={<Index6 />} />
+          <Route path="/eventdetail" element={<Index7 />} />
+          <Route path="/typetest-test" element={<Index8 />} />
+          <Route path="/quiz-questions" element={<Index9 />} />
+          <Route path="/quiz-result" element={<Index10 />} />
+
+
+        <Route element={<ProtectedRoutes isAuth={isAuth}/>}>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/discussion" element={<Discussion/>}/>
+        </Route>
+
+        <Route element={<NotAuthRoutes isAuth={isAuth}/>}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Sign />} />
+        </Route>
+
+      </Routes>
+    
+    </div>
+  );*/
+
   return (
     <Router>
       <Routes>
