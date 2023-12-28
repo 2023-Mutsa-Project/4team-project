@@ -1,0 +1,202 @@
+body {
+    font-family: 'Cardo', Helvetica;
+    color: #1B3764;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .header {
+    margin: 0px;
+    padding: 20px;
+    background-color: #1B3764;
+  }
+  
+  .title {
+    width: 20rem;
+    color: white;
+    font-size: 20px;
+    margin: 0px 0px 0px 5px;
+    display: inline-block;
+  }
+  
+  .menuBarContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menuBar {
+    width: 100%;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .menuBar li {
+    margin-right: 10px;
+  }
+  
+  .menuBar li a {
+    font-size: 12px;
+    color: white;
+  }
+  
+  .loginButton {
+    width: 4.5rem;
+    height: 2rem;
+    padding: 5px;
+    float: right;
+    display: inline;
+    border: 0px;
+    background-color: #FFCA42;
+    color: #1B3764;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .loginButton:hover {
+    background-color: white;
+  }
+  
+  .searchField {
+    margin-top: 30px;
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+  }
+  
+  .searchTitle {
+    color: #1B3764;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 20px;
+  }
+  
+  .horizontalLine {
+    width: 3rem;
+    height: 2px;
+    background-color: #FFCA42;
+    margin: 0px auto 20px auto;
+    position: relative;
+  }  
+
+  .bodyContainer {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .formContainer {
+    width: 40rem;
+    height: 30rem;
+    background-color: #F5F8FC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .secTitle {
+    font-size: 20px;
+    width: 58rem;
+    color: #1B3764;
+  }
+  
+  .addButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 4rem 0;
+  }
+  
+  .addButton {
+    width: 21rem;
+    height: 2.5rem;
+    padding: 5px;
+    display: inline;
+    border: 0px;
+    background-color: #FFCA42;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .addButton:hover {
+    color: white;
+    background-color: #1B3764;
+  }
+
+  .footer {
+    padding: 8px; 
+    background: #1B3764;
+    text-align: center;
+    color: white;
+  }   
+  
+  .footer h2{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .footer p{
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .footer ul {
+    padding: 0px;
+  }
+  
+  .copyright {
+    background: #1B3764;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0 1em 0;
+    width: 100%;
+  }
+
+  .descContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 41rem;
+  }
+
+  .descContainer input {
+    width: 20rem;
+    height: 1.5rem;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  }
+
+  .findText {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  .findText a {
+    color: gray;
+  }

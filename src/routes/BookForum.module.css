@@ -1,0 +1,278 @@
+body {
+    font-family: 'Cardo', Helvetica;
+    color: #1B3764;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .header {
+    margin: 0px;
+    padding: 20px;
+    background-color: #1B3764;
+  }
+  
+  .title {
+    width: 20rem;
+    color: white;
+    font-size: 20px;
+    margin: 0px 0px 0px 5px;
+    display: inline-block;
+  }
+  
+  .menuBarContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menuBar {
+    width: 100%;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .menuBar li {
+    margin-right: 10px;
+  }
+  
+  .menuBar li a {
+    font-size: 12px;
+    color: white;
+  }
+  
+  .loginButton {
+    width: 4.5rem;
+    height: 2rem;
+    padding: 5px;
+    float: right;
+    display: inline;
+    border: 0px;
+    background-color: #FFCA42;
+    color: #1B3764;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .loginButton:hover {
+    background-color: white;
+  }
+  
+  .searchField {
+    background-color: #1B3764;
+    margin-top: 30px;
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+  }
+  
+  .searchTitle {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 20px;
+  }
+  
+  .horizontalLine {
+    width: 3rem;
+    height: 2px;
+    background-color: #FFCA42;
+    margin: 0px auto 20px auto;
+    position: relative;
+  }  
+
+  .bodyContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .secTitle {
+    font-size: 20px;
+    width: 58rem;
+    color: #1B3764;
+  }
+  
+  .addButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 4rem 0;
+  }
+  
+  .addButton {
+    width: 12rem;
+    height: 2.5rem;
+    padding: 5px;
+    display: inline;
+    border: 0px;
+    background-color: #FFCA42;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .addButton:hover {
+    color: white;
+    background-color: #1B3764;
+  }
+
+  .newButtonContainer {
+    margin: 0.5rem 0;
+  }
+  
+  .rightContainer {
+    width: 32rem;
+    float: right;
+    display: flex;
+  }
+
+  .newButton {
+    float: right;
+    width: 12rem;
+    height: 2.5rem;
+    padding: 5px;
+    margin-right: 1rem;
+    display: inline;
+    border: 0px;
+    background-color: #FFCA42;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .newButton:hover {
+    color: white;
+    background-color: #1B3764;
+  }
+
+  .footer {
+    padding: 8px; 
+    background: #1B3764;
+    text-align: center;
+    color: white;
+  }   
+  
+  .footer h2{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .footer p{
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .footer ul {
+    padding: 0px;
+  }
+  
+  .copyright {
+    background: #1B3764;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0 1em 0;
+    width: 100%;
+  }
+
+  .forumContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0px;
+    margin-bottom: 2rem;
+    background-color: #F5F8FC;
+  }
+
+  .forumDiv {
+    width: 18rem;
+    height: 6rem;
+    background-color: white;
+    border: 0px;
+    box-shadow: 0px 2px 8px 0px rgb(174, 174, 174);
+    margin: 1rem;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .forumTitle {
+    color: #1B3764;
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 1rem;
+  }
+
+  .forumDesc {
+    color: #1B3764;
+    text-align: center;
+    font-size: 11px;
+    padding: 0px;
+    margin: 0px 0px 0px 10px;
+  }
+
+  .searchCover {
+    margin: auto;
+    position: relative;
+    width: 13rem;
+    height: 2rem;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  
+  .searchInput {
+    width: 100%;
+    height: 2rem;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 2px 0px 2px 20px;
+    background-color: white;
+  }
+  
+  .searchButton {
+    position: absolute;
+    background-color: transparent;
+    color: grey;
+    width: 2rem;
+    height: 2.5rem;
+    margin-left: 0.5rem;
+    border: none;
+    top: 0.05rem;
+    right: 0rem;
+    padding: 0;
+  }
+  
+  .searchIcon {
+    float: right;
+    font-size: 20px;
+  }
+
+  .ruleContainer {
+    margin: 0 auto;
+    padding: 0.5rem;
+    width: 35rem;
+    background-color: #FFCA42;
+    font-weight: 600;
+    font-size: 12px;
+  }

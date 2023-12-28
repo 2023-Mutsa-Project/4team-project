@@ -82,20 +82,20 @@ function BookList() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const bookList = [
-    { image: "/bookcover.png", score: "4.5", reviewNum: "100" },
-    { image: "/bookcover.png", score: "4.0", reviewNum: "200" },
-    { image: "/bookcover.png", score: "3.5", reviewNum: "300" },
-    { image: "/bookcover.png", score: "3.0", reviewNum: "400" },
-    { image: "/bookcover.png", score: "4.5", reviewNum: "500" },
-    { image: "/bookcover.png", score: "4.0", reviewNum: "600" },
+    { bookId: 1, coverImage: "/bookcover.png", averageRating: "4.5", reviewCount: "100" },
+    { bookId: 2, coverImage: "/bookcover.png", averageRating: "4.0", reviewCount: "200" },
+    { bookId: 3, coverImage: "/bookcover.png", averageRating: "3.5", reviewCount: "300" },
+    { bookId: 4, coverImage: "/bookcover.png", averageRating: "3.0", reviewCount: "400" },
+    { bookId: 5, coverImage: "/bookcover.png", averageRating: "4.5", reviewCount: "500" },
+    { bookId: 6, coverImage: "/bookcover.png", averageRating: "4.0", reviewCount: "600" },
   ];
 
   // api 사용해서 book list 데이터 가져오기
   /*const fetchBookList = async () => {
-    axios.get('백엔드 링크')
+    axios.get('백엔드 링크/books')
       .then(response => {
-        setBookList(response.data);
-        console.log(response)
+        setBookList(response.body.bestsellers.slice(0, 6));
+        console.log(response);
         setIsLoading(false); // 로딩 완료
       })
       .catch(error => {
@@ -105,29 +105,7 @@ function BookList() {
 
   useEffect(() => {
     fetchBookList();
-  }, []);*/
-
-  // random으로 book list 가져와야 할 경우
-  /*const getRandomBookList = useMemo(() => {
-    if (isLoading) {
-      return [{ name: '', programDate: '', location: { specificlocation: '' } }];
-    }
-
-    const randomBookList = [];
-    for (let i = 0; i < 6; i++) {
-      const randomValue = bookList[Math.floor(Math.random() * bookList.length)];
-      randomPrograms.push(randomValue);
-    }
-    return randomBookList;
-  }, [isLoading, bookList]);
-
-  if (isLoading) {
-    return (
-      <Loading>
-        <FadeLoader />
-      </Loading>
-    );
-  }*/
+  }, [bookList]);*/
 
   return (
     <div>
@@ -149,12 +127,12 @@ function BookList() {
           </button>
           {bookList.slice(currentIndex, currentIndex + 3).map((el, index) => (
             <div>
-              <Link to={`/apply/${index}`}>
-                <div className="bookDiv" key={index}>
-                  <img src={el.image}/>
+              <Link to={`/review/${el.bookId}`}>
+                <div className="bookDiv" key={el.bookId}>
+                  <img src={el.coverImage}/>
                   <div className="descDiv">
-                    <span className="score"><FontAwesomeIcon icon={faCircle} size="2xs" style={{color: "#ffca42",}} /> 평점 {el.score} / 5.0</span>
-                    <span className="reviewNum"><FontAwesomeIcon icon={faCircle} size="2xs" style={{color: "#ffca42",}} /> 리뷰 {el.reviewNum}</span>
+                    <span className="score"><FontAwesomeIcon icon={faCircle} size="2xs" style={{color: "#ffca42",}} /> 평점 {el.averageRating} / 5.0</span>
+                    <span className="reviewNum"><FontAwesomeIcon icon={faCircle} size="2xs" style={{color: "#ffca42",}} /> 리뷰 {el.reviewCount}</span>
                   </div>
                 </div>
               </Link>

@@ -1,39 +1,32 @@
-@font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-    font-family: 'NanumSquareNeo-Variable';
-}
-
-a {
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  a {
     text-decoration: none;
-}
-
-.header {
+  }
+  
+  .header {
     margin: 0px;
     padding: 20px;
     background-color: #1B3764;
-}
-
-.title {
+  }
+  
+  .title {
     width: 20rem;
     color: white;
     font-size: 20px;
     margin: 0px 0px 0px 5px;
     display: inline-block;
-}
-
-.menuBarContainer {
+  }
+  
+  .menuBarContainer {
     width: 100%;
     display: flex;
     align-items: center;
-}
-
-.menuBar {
+  }
+  
+  .menuBar {
     width: 100%;
     list-style-type: none;
     padding: 0px;
@@ -41,18 +34,18 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
+  }
   
-.menuBar li {
+  .menuBar li {
     margin-right: 10px;
-}
-
-.menuBar li a {
+  }
+  
+  .menuBar li a {
     font-size: 12px;
     color: white;
-}
-
-.loginButton {
+  }
+  
+  .loginButton {
     width: 4.5rem;
     height: 2rem;
     padding: 5px;
@@ -63,52 +56,52 @@ a {
     color: #1B3764;
     font-size: 12px;
     font-weight: bold;
-    font-family: 'NanumSquareNeo-Variable'
-}
-
-.loginButton:hover {
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .loginButton:hover {
     background-color: white;
-}
-
-.searchField {
+  }
+  
+  .searchField {
     background-color: #1B3764;
     margin-top: 30px;
     padding: 10px 5px 10px 5px;
     text-align: center;
-}
-
-.searchTitle {
+  }
+  
+  .searchTitle {
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     margin: 20px;
-}
-
-.horizontalLine {
+  }
+  
+  .horizontalLine {
     width: 3rem;
     height: 2px;
     background-color: #FFCA42;
     margin: 0px auto 20px auto;
     position: relative;
   }  
-
-.searchCover {
+  
+  .searchCover {
     margin: auto;
     position: relative;
     width: 41rem;
     justify-content: space-between;
-}
-
-.searchInput {
+  }
+  
+  .searchInput {
     width: 100%;
     height: 2.5rem;
     border: 3px solid #FFCA42;
     padding: 2px 0px 2px 20px;
     margin-bottom: 10px;
     background-color: white;
-}
-
-.searchButton {
+  }
+  
+  .searchButton {
     position: absolute;
     background-color: transparent;
     color: grey;
@@ -118,50 +111,56 @@ a {
     border: none;
     top: 5px;
     right: 5px;
-}
-
-.searchIcon {
+  }
+  
+  .searchIcon {
     font-size: 20px;
-}
-
-.selectBox {
+  }
+  
+  .selectBox {
     width: 8rem;
     color: #1B3764;
     border: 3px solid #FFCA42;
     margin: 1rem 2rem 0px 0px;
     padding: 0.2em;
     text-align: center;
-    font-family: 'NanumSquareNeo-Variable';
+    font-family: 'Cardo', Helvetica;
     font-size: 16px;
-}
-
-.selectBox:last-child {
+  }
+  
+  .selectBox:last-child {
     margin: 1rem 0px 0px 0px;
-}
-
-.bodyContainer {
-    margin-top: 2rem;
-}
-
-.titleContainer {
+  }
+  
+  .bodyContainer {
+    width: 850px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titleContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.secTitle {
+  }
+  
+  .secTitle {
+    font-size: 20px;
     width: 41rem;
     color: #1B3764;
-}
-
-.addButtonContainer {
+  }
+  
+  .addButtonContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 50px 0px;
-}
-
-.addButton {
+  }
+  
+  .addButton {
     width: 10rem;
     height: 2.5rem;
     padding: 5px;
@@ -171,20 +170,20 @@ a {
     color: black;
     font-size: 15px;
     font-weight: bold;
-    font-family: 'NanumSquareNeo-Variable'
-}
-
-.addButton:hover {
+    font-family: 'Cardo', Helvetica;
+  }
+  
+  .addButton:hover {
     color: white;
     background-color: #1B3764;
-}
-
-.reviewField {
+  }
+  
+  .reviewField {
     padding: 1rem 0px;
     background-color: #F5F8FC;
-}
-
-.footer {
+  }
+  
+  .footer {
     padding: 8px; 
     background: #1B3764;
     text-align: center;
@@ -201,7 +200,7 @@ a {
     text-align: center;
     font-size: 10px;
   }
-
+  
   .footer ul {
     padding: 0px;
   }
@@ -213,4 +212,44 @@ a {
     text-align: center;
     padding: 1.5em 0 1em 0;
     width: 100%;
+  }
+
+  .bookDiv {
+    font-size: 16px;
+    width: 12rem;
+    height: 17rem;
+    background-color: #F5F8FC;
+    border: 0px;
+    box-shadow: 0px 2px 8px 0px rgb(174, 174, 174);
+    margin: 10px 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 calc(33.3333% - 10px);
+  }
+
+  .descDiv {
+    padding: 10px 0px 0px 0px;
+  }
+
+  .score {
+    color: #1B3764;
+    text-align: center;
+    font-size: 11px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .reviewNum {
+    color: #1B3764;
+    text-align: center;
+    font-size: 11px;
+    padding: 0px;
+    margin: 0px 0px 0px 10px;
+  }
+
+  img {
+    width: 10rem;
   }

@@ -1,0 +1,1 @@
+export { Index6 } from "./Index6.jsx";

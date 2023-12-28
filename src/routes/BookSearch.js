@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
-import BookList from "../module/BookList";
-import BookListList from "../module/BookListList";
-import ReviewList from "../module/ReviewList";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./BookSearch.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBookBookmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircle,
+  faSearch,
+  faBookBookmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 function BookSearch() {
-  const history = useHistory();
+  //const [bookList, setBookList] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { option1, option2, option3, searchWord } = location.state || {};
   const [keyword, setKeyword] = useState("");
   const [selectedValue1, setSelectedValue1] = useState("");
   const [selectedValue2, setSelectedValue2] = useState("");
@@ -22,7 +26,7 @@ function BookSearch() {
   ];
 
   const searchOptions2 = [
-    { value: "all", label: "테마 (전체)" },
+    { value: "all", label: "장르 (전체)" },
     { value: "novel", label: "소설" },
     { value: "poetry", label: "시/에세이" },
     { value: "humanity", label: "인문" },
@@ -60,6 +64,43 @@ function BookSearch() {
     setKeyword(event.target.value);
   };
 
+  const onClick = () => {
+    navigate("/search", {
+      state: {
+        option1: selectedValue1,
+        option2: selectedValue2,
+        option3: selectedValue3,
+        searchWord: keyword,
+      },
+    });
+  };
+
+  // api 사용해서 book list 데이터 가져오기
+  /*const fetchBookList = async () => {
+    axios.get(`백엔드 링크/books/${searchWord}`)
+      .then(response => {
+        setBookList(response.body.searchResults);
+        console.log(response);
+        setIsLoading(false); // 로딩 완료
+      })
+      .catch(error => {
+        console.error('Error fetching Programs:', error);
+      });
+  }
+
+  useEffect(() => {
+    fetchBookList();
+  }, [bookList]);*/
+
+  const bookList = [
+    { coverImage: "/bookcover.png", averageRating: "4.5", reviewCount: "100" },
+    { coverImage: "/bookcover.png", averageRating: "4.0", reviewCount: "200" },
+    { coverImage: "/bookcover.png", averageRating: "3.5", reviewCount: "300" },
+    { coverImage: "/bookcover.png", averageRating: "3.0", reviewCount: "400" },
+    { coverImage: "/bookcover.png", averageRating: "4.5", reviewCount: "500" },
+    { coverImage: "/bookcover.png", averageRating: "4.0", reviewCount: "600" },
+  ];
+
   return (
     <div>
       <div className={styles.header}>
@@ -73,25 +114,25 @@ function BookSearch() {
             <h2 className={styles.title}>도서 공유 커뮤니티</h2>
           </Link>
           <ul className={styles.menuBar}>
-            <li>
-              <a href="#">Home</a>
+          <li>
+          <a href="/profile">프로필</a>
             </li>
             <li>
-              <a href="#">도서 공유</a>
+              <a href="/review">도서 공유</a>
             </li>
             <li>
-              <a href="#">독서 토론</a>
+              <a href="/discussion">독서 토론</a>
             </li>
             <li>
-              <a href="#">독서 활동</a>
+              <a href="/activity">독서 활동</a>
             </li>
             <li>
-              <a href="#">이벤트 및 클럽</a>
+              <a href="/event">이벤트 및 클럽</a>
             </li>
             <li>
               <button
                 className={styles.loginButton}
-                onClick={() => history.push("/login")}
+                onClick={() => navigate("/login")}
               >
                 로그인
               </button>
@@ -103,17 +144,13 @@ function BookSearch() {
           <div className={styles.horizontalLine}></div>
           <div className={styles.searchCover}>
             <input onChange={onChange} className={styles.searchInput} />
-            <Link to={`search/${keyword}`}>
-              <button className={styles.searchButton}>
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  className={styles.searchIcon}
-                />
-              </button>
-            </Link>
+            <button className={styles.searchButton} onClick={onClick}>
+              <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+            </button>
           </div>
           <div>
-            <select className={styles.selectBox}
+            <select
+              className={styles.selectBox}
               id="searchOption1"
               value={selectedValue1}
               onChange={handleSelectChange1}
@@ -124,7 +161,8 @@ function BookSearch() {
                 </option>
               ))}
             </select>
-            <select className={styles.selectBox}
+            <select
+              className={styles.selectBox}
               id="searchOption2"
               value={selectedValue2}
               onChange={handleSelectChange2}
@@ -135,10 +173,11 @@ function BookSearch() {
                 </option>
               ))}
             </select>
-            <select className={styles.selectBox}
+            <select
+              className={styles.selectBox}
               id="searchOption3"
               value={selectedValue3}
-              onChange={handleSelectChange2}
+              onChange={handleSelectChange3}
             >
               {searchOptions3.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -150,34 +189,33 @@ function BookSearch() {
         </div>
       </div>
       <div className={styles.bodyContainer}>
-        <div>
-          <div className={styles.titleContainer}>
-            <h3 className={styles.secTitle}>베스트셀러 도서</h3>
+        {bookList.map((el, index) => (
+          <div>
+            <Link to={`/review/${el.bookId}`}>
+              <div className={styles.bookDiv} key={el.bookId}>
+                <img src={el.coverImage} />
+                <div className={styles.descDiv}>
+                  <span className={styles.score}>
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      size="2xs"
+                      style={{ color: "#ffca42" }}
+                    />{" "}
+                    평점 {el.averageRating} / 5.0
+                  </span>
+                  <span className={styles.reviewNum}>
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      size="2xs"
+                      style={{ color: "#ffca42" }}
+                    />{" "}
+                    리뷰 {el.reviewCount}
+                  </span>
+                </div>
+              </div>
+            </Link>
           </div>
-          <BookList />
-        </div>
-        <div>
-          <div className={styles.titleContainer}>
-            <h3 className={styles.secTitle}>추천 도서 리스트</h3>
-          </div>
-          <BookListList />
-        </div>
-        <div>
-          <div className={styles.titleContainer}>
-            <h3 className={styles.secTitle}>실시간 리뷰</h3>
-          </div>
-          <div className={styles.reviewField}>
-            <ReviewList />
-          </div>
-        </div>
-        <div className={styles.addButtonContainer}>
-          <button
-            className={styles.addButton}
-            onClick={() => history.push("/review/post")}
-          >
-            도서 추가하기
-          </button>
-        </div>
+        ))}
       </div>
       <footer className={styles.footer}>
         <div>

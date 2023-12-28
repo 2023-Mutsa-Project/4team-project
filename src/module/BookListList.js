@@ -2,10 +2,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Modal from 'react-modal';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronRight,
-  faChevronLeft,
+  faCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FadeLoader } from "react-spinners";
 
@@ -44,6 +44,74 @@ const BookListListField = styled.div`
   }
 `;
 
+const ModalField = styled.div`
+width: 100%;
+
+.modalBookContainer {
+  width: 41rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.bookDiv {
+  font-size: 16px;
+  width: 12rem;
+  height: 17rem;
+  background-color: #F5F8FC;
+  border: 0px;
+  box-shadow: 0px 2px 8px 0px rgb(174, 174, 174);
+  margin: 10px 20px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.descDiv {
+  padding: 10px 0px 0px 0px;
+}
+
+.score {
+  color: #1B3764;
+  text-align: center;
+  font-size: 11px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.reviewNum {
+  color: #1B3764;
+  text-align: center;
+  font-size: 11px;
+  padding: 0px;
+  margin: 0px 0px 0px 10px;
+}
+
+img {
+  width: 10rem;
+}
+
+.bookListBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  color: white;
+  background-color: #1B3764;
+  width: 39rem;
+  height: 3rem;
+  padding: 1rem;
+}
+
+.bookListTitle {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+`;
+
 /*const Loading = styled.div`
   display: flex;
   justify-content: center;
@@ -55,7 +123,17 @@ const BookListListField = styled.div`
 function BookListList() {
   //const [bookList, setBookList] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   
+  const bookList = [
+    { coverImage: "/bookcover.png", averageRating: "4.5", reviewCount: "100" },
+    { coverImage: "/bookcover.png", averageRating: "4.0", reviewCount: "200" },
+    { coverImage: "/bookcover.png", averageRating: "3.5", reviewCount: "300" },
+    { coverImage: "/bookcover.png", averageRating: "3.0", reviewCount: "400" },
+    { coverImage: "/bookcover.png", averageRating: "4.5", reviewCount: "500" },
+    { coverImage: "/bookcover.png", averageRating: "4.0", reviewCount: "600" },
+  ];
+
   const bookListList = [
     { name: "연예인 OOO이 추천하는 도서 리스트" },
     { name: "영화화된 도서 리스트" },
@@ -107,26 +185,86 @@ function BookListList() {
       <BookListListField>
         <div className="listDiv">
           {bookListList.slice(0, 2).map((el, index) => (
-            <div>
-              <Link to={`/apply/${index}`}>
+            <div onClick={()=> setIsOpen(true)}>
                 <div className="bookList" key={index}>
                     <span className="bookListListTitle">{el.name}</span>
                 </div>
-              </Link>
             </div>
           ))}
         </div>
         <div className="listDiv">
           {bookListList.slice(2, 4).map((el, index) => (
-            <div>
-              <Link to={`/apply/${index}`}>
+            <div onClick={()=> setIsOpen(true)}>
                 <div className="bookList" key={index}>
                     <span className="bookListListTitle">{el.name}</span>
                 </div>
-              </Link>
             </div>
           ))}
         </div>
+        <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+        <ModalField>
+        <h3 className="bookListTitle">도서 리스트 상세</h3>
+        <div className="bookListBanner">추천 도서 리스트 제목</div>
+        <div className="modalBookContainer">
+        {bookList.slice(0, 3).map((el, index) => (
+          <div key={el.bookId}>
+            <Link to={`/review/${el.bookId}`}>
+              <div className="bookDiv">
+                <img src={el.coverImage} />
+                <div className="descDiv">
+                  <span className="score">
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      size="2xs"
+                      style={{ color: "#ffca42" }}
+                    />{" "}
+                    평점 {el.averageRating} / 5.0
+                  </span>
+                  <span className="reviewNum">
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      size="2xs"
+                      style={{ color: "#ffca42" }}
+                    />{" "}
+                    리뷰 {el.reviewCount}
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
+        </div>
+        <div className="modalBookContainer">
+        {bookList.slice(3, 6).map((el, index) => (
+          <div key={el.bookId}>
+            <Link to={`/review/${el.bookId}`}>
+              <div className="bookDiv">
+                <img src={el.coverImage} />
+                <div className="descDiv">
+                  <span className="score">
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      size="2xs"
+                      style={{ color: "#ffca42" }}
+                    />{" "}
+                    평점 {el.averageRating} / 5.0
+                  </span>
+                  <span className="reviewNum">
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      size="2xs"
+                      style={{ color: "#ffca42" }}
+                    />{" "}
+                    리뷰 {el.reviewCount}
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
+        </div>
+        </ModalField>
+        </Modal>
       </BookListListField>
     </div>
   );
