@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'; 
-import { Routes, Route, useLocation } from "react-router-dom";
-
+import React from 'react'; 
+//import { Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch, useSelector } from 'react-redux';
